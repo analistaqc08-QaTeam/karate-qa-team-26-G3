@@ -21,16 +21,16 @@ Feature: Casos de prueba de el modulo User
     Scenario: CP-02 creación de usuario con variables
       * def body =
       """
-      {
+       {
       "id": 0,
-      "username": "Demo",
-      "firstName": "Demo1",
-      "lastName": "Demo",
+      "username": "Demo4",
+      "firstName": "abc",
+      "lastName": "perez",
       "email": "abc",
-      "password": "abc",
-      "phone": "976521876",
+      "password": "11111",
+      "phone": "21233333",
       "userStatus": 0
-        }
+    }
       """
 
       Given url "https://petstore.swagger.io/v2"
@@ -61,3 +61,9 @@ Feature: Casos de prueba de el modulo User
       When  method put
       Then status 200
 
+  Scenario: CP-04 eliminar usuario exitoso
+    * def username = "Demo2"
+    Given url "https://petstore.swagger.io/v2"
+    And  path "user/"  + username
+    When method delete
+    Then status 200
