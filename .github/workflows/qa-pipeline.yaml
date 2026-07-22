@@ -1,16 +1,16 @@
-name: QA Pipelina
-
+name: QA Pipeline
 
 on:
-  #Ejecuta cuando subo cambios en la rama "main"
+  #Ejecuta cuando subo cambios en la rama main
   push:
     branches:
       - main
+
 jobs:
-    build:
-    runs-on: ubuntu-24.04
+  build:
+    runs-on: ubuntu-22.04
+
     steps:
       - name: Prueba inicial
         run: echo "Mi primer workflow"
-
 
