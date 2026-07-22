@@ -1,6 +1,6 @@
 name: QA Pipelina
 
-##On es para pomer los trigger
+
 on:
   #Ejecuta cuando subo cambios en la rama "main"
   push:
@@ -10,6 +10,7 @@ jobs:
     build:
     runs-on: ubuntu-24.04
     steps:
-      name: Prueba inicial
-      run: echo "Mi primer workflow"
+      - name: Prueba inicial
+        run: echo "Mi primer workflow"
+
 
