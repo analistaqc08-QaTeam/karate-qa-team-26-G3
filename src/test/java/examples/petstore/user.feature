@@ -64,6 +64,10 @@ Feature: Casos de prueba de el modulo User
       """
       When  method put
       Then status 200
+      * print response
+      And match response.type == '#string'
+      And match response.code == 200
+      And  match response.message =='#string'
 
   Scenario: CP-04 eliminar usuario exitoso
     * def username = "Demo2"
@@ -71,6 +75,8 @@ Feature: Casos de prueba de el modulo User
     And  path "user/"  + username
     When method delete
     Then status 200
+    * print response
+    And match response.code == 200
 
 
   Scenario: CP-05  login exitoso
@@ -98,6 +104,9 @@ Feature: Casos de prueba de el modulo User
     And form field bookingdates[checkout] = "2019-01-01"
     When method post
     Then status 200
+    * print response
+
+
 
     ## request de forma de linea
    Scenario: CP-07 create token
